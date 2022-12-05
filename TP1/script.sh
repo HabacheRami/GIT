@@ -12,3 +12,10 @@ cp ./config__files/ssh/Banner /etc/Banner
 
 systemctl restart sshd 
 
+# Création d'utilisateur
+printf "Donnez le nom de l'utilisateur à créer :\n"
+read  $user
+useradd -m -d/home/$user -s /bin/bash -c "$user" $user; 
+passwd $user
+		
+usermod -aG sudo $user
