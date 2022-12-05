@@ -29,3 +29,5 @@ read key
 echo $key >> tmp.txt
 
 cat tmp.txt >> ~/.ssh/authorized_keys && echo "Clé ssh ajouté"
+
+rm tmp.txt
