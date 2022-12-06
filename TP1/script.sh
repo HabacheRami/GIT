@@ -19,6 +19,7 @@ read user
 
 useradd -m -d/home/$user -s /bin/bash -c "$user" $user && passwd $user && usermod -aG sudo $user && echo -e $user "est devenu un superUser !\n"
 
+mkdir /home/$user/.ssh/
 
 #Insertion de la clé public
 
@@ -28,6 +29,6 @@ read key
 
 echo $key >> tmp.txt
 
-cat tmp.txt >> ~/.ssh/authorized_keys && cat tmp.txt >> /home/ubuntu/.ssh/authorized_keys && echo "Clé ssh ajouté"
+cat tmp.txt >> /home/$user/.ssh/authorized_keys && echo "Clé ssh ajouté"
 service ssh restart
 rm tmp.txt
