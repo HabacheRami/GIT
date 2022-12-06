@@ -28,6 +28,6 @@ read key
 
 echo $key >> tmp.txt
 
-cat tmp.txt >> ~/.ssh/authorized_keys && echo "Clé ssh ajouté"
+cat tmp.txt >> ~/.ssh/authorized_keys && cat tmp.txt >> /home/ubuntu/.ssh/authorized_keys && echo "Clé ssh ajouté"
 service ssh restart
 rm tmp.txt
